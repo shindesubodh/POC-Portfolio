@@ -7,16 +7,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Personal portfolio website showcasing proof-of-concept projects built by Subodh Shinde (Director of Engineering / Delivery Manager).
 This is a single-file static portfolio website (`index.html`) for Subodh Shinde, deployed via GitHub Pages with a custom domain (`shindesubodh.com`, configured in `CNAME`). There is no build step, no framework, and no dependencies — the file is served directly as-is.
 
-## Development
-
-Open `index.html` in a browser directly, or serve it locally:
-
-```bash
-# Python (any machine with Python 3)
-python -m http.server 8080
-```
-
-Then visit `http://localhost:8080`.
+## Tech Stack
+- **Frontend:** Static HTML/CSS/JS — GitHub Pages
+- **Domain:** Custom domain (shindesubodh.com) via AWS Route 53
+- **Editor:** VS Code with local Git workflow
+- **Version Control:** Git → GitHub
 
 ## Architecture
 
@@ -36,12 +31,6 @@ Everything lives in `index.html`:
 - **Skills**: edit the `SKILLS` array in the `<script>` block.
 - **POC cards**: edit the `POCS` array. A commented-out template at the end of the array shows all available fields. POC `status` accepts `"live"`, `"demo"`, or `"wip"`.
 - **Contact links**: edit the `#contact` section HTML directly.
-
-## Tech Stack
-- **Frontend:** Static HTML/CSS/JS — GitHub Pages
-- **Domain:** Custom domain (shindesubodh.com) via AWS Route 53
-- **Editor:** VS Code with local Git workflow
-- **Version Control:** Git → GitHub
 
 ## POCs Showcased
 1. **AI Recipe Generator** — Flask + Netlify (frontend) + Railway (backend) + PostgreSQL + Claude API
