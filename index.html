@@ -334,6 +334,32 @@
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* LIGHTBOX */
+    #lightbox {
+      display: none;
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.88);
+      align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 92vw; max-height: 88vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+      cursor: default;
+      object-fit: contain;
+    }
+    #lightbox-close {
+      position: absolute; top: 1.2rem; right: 1.4rem;
+      background: rgba(255,255,255,0.12); border: none;
+      color: #fff; font-size: 22px; line-height: 1;
+      width: 36px; height: 36px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    #lightbox-close:hover { background: rgba(255,255,255,0.22); }
+
     /* RESPONSIVE */
     @media (max-width: 640px) {
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -475,6 +501,12 @@
   <p>© 2026 Subodh Shinde · <a href="https://shindesubodh.com" style="color:inherit;">shindesubodh.com</a></p>
 </footer>
 
+<!-- LIGHTBOX OVERLAY -->
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">✕</button>
+  <img id="lightbox-img" src="" alt="Architecture diagram" />
+</div>
+
 
 <script>
 /* ============================================================
@@ -518,6 +550,7 @@ const POCS = [
     arch: "Netlify → Flask (Railway) → Claude API + PostgreSQL",
     tags: ["AI", "Full-stack", "Python"],
     tagStyle: { bg: "#eef2fd", color: "#1a4fd6" },
+    architectureImg: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Recipe-Architecture%20diagram.png",
     links: [
       { label: "Live app", url: "https://ai-recipe-generator-2026.netlify.app/" },
       { label: "Architecture", url: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Recipe-Architecture%20diagram.png" }
@@ -608,7 +641,12 @@ function renderPOCs(filter) {
     const statusClass = p.status === 'live' ? 'status-live' : p.status === 'demo' ? 'status-demo' : 'status-wip';
     const statusLabel = p.status === 'live' ? 'Live' : p.status === 'demo' ? 'Demo' : 'WIP';
     const tagsHtml = p.tags.map(t => `<span class="poc-tag" style="background:${p.tagStyle.bg};color:${p.tagStyle.color}">${t}</span>`).join('');
-    const linksHtml = p.links.map(l => `<a class="poc-link" href="${l.url}" target="_blank" rel="noopener">${extSvg} ${l.label}</a>`).join('');
+    const linksHtml = p.links.map(l => {
+      if (p.architectureImg && l.url === p.architectureImg) {
+        return `<a class="poc-link" href="#" data-lightbox="${p.architectureImg}" onclick="openLightbox(event,this)">${extSvg} ${l.label}</a>`;
+      }
+      return `<a class="poc-link" href="${l.url}" target="_blank" rel="noopener">${extSvg} ${l.label}</a>`;
+    }).join('');
     return `
       <div class="poc-card" style="animation-delay:${i * 0.07}s">
         <div class="poc-card-top">
@@ -634,6 +672,26 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 buildSkills();
 buildFilters();
 renderPOCs('All');
+
+// Lightbox
+function openLightbox(e, el) {
+  e.preventDefault();
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = el.dataset.lightbox;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightbox-img').src = '';
+  document.body.style.overflow = '';
+}
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this || e.target.id === 'lightbox-close') closeLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
 </script>
 
 </body>
