@@ -540,6 +540,21 @@ const SKILLS = [
 
 const POCS = [
   {
+    title: "AI Proposal Generator",
+    desc: "BD Managers enter client details and requirements to receive a RAG-grounded proposal streamed in real time. A knowledge base of 8 past proposals, embedded in pgvector via Voyage AI, drives domain-aware contextual retrieval.",
+    icon: "📝",
+    iconBg: "#e0f2fe",
+    status: "live",
+    arch: "Netlify → Flask (Railway) → Claude API + Voyage AI + pgvector (PostgreSQL)",
+    tags: ["AI", "Full-stack", "Python", "RAG"],
+    tagStyle: { bg: "#e0f2fe", color: "#0369a1" },
+    architectureImg: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI_Proposal_Generator_Architecture.png",
+    links: [
+      { label: "Live app", url: "https://ai-rag-proposal-generator.netlify.app/" },
+      { label: "Architecture", url: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI_Proposal_Generator_Architecture.png" }
+    ]
+  },
+  {
     title: "AI Interview Scorecard",
     desc: "Two-stage AI pipeline for hiring managers: upload JD + résumé for candidate fit scoring and tailored interview questions, then log interview notes for competency evaluation and a hire/no-hire recommendation.",
     icon: "📋",
