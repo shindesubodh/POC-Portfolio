@@ -630,6 +630,22 @@ const POCS = [
     ]
   },
 
+  {
+    title: "AI Delivery Status Agent",
+    desc: "AI agent built on Claude Managed Agents — Anthropic's hosted agent runtime (public beta, April 2026). Autonomously fetches Jira tickets, GitHub PRs, CI status, and a RAID log, then synthesises a structured delivery health report. Orchestration, retries, state management, and context compaction are handled by the platform — the build focuses on tool definitions and execution handlers.",
+    icon: "📊",
+    iconBg: "#eef2fd",
+    status: "live",
+    arch: "Netlify → Railway (tool handlers) → Claude Managed Agents (Anthropic) → Jira / GitHub APIs",
+    tags: ["AI", "Agentic", "Python", "Full-stack"],
+    tagStyle: { bg: "#eef2fd", color: "#1a4fd6" },
+    architectureImg: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Agent-Architecture.png",
+    links: [
+      { label: "Live app", url: "https://ai-agent-project-status.netlify.app/" },
+      { label: "Architecture", url: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Agent-Architecture.png" }
+    ]
+  },
+
   /* ADD NEW POC:
   ,{
     title: "Your POC Name",
