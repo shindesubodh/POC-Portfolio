@@ -540,6 +540,21 @@ const SKILLS = [
 
 const POCS = [
   {
+    title: "AI Delivery Status Agent",
+    desc: "Delivery health agent built on Claude Managed Agents — Anthropic's hosted agent runtime. Autonomously fetches Jira tickets, GitHub PRs, CI status, and a RAID log, then synthesises a structured delivery status report.",
+    icon: "📊",
+    iconBg: "#eef2fd",
+    status: "live",
+    arch: "Netlify → Railway (tool handlers) → Claude Managed Agents (Anthropic) → Jira / GitHub APIs",
+    tags: ["AI", "Agentic", "Python", "Full-stack"],
+    tagStyle: { bg: "#eef2fd", color: "#1a4fd6" },
+    architectureImg: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Agent-Architecture.png",
+    links: [
+      { label: "Live app", url: "https://ai-agent-project-status.netlify.app/" },
+      { label: "Architecture", url: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Agent-Architecture.png" }
+    ]
+  },
+  {
     title: "AI Proposal Generator",
     desc: "BD Managers enter client details and requirements to receive a RAG-grounded proposal streamed in real time. A knowledge base of 8 past proposals, embedded in pgvector via Voyage AI, drives domain-aware contextual retrieval.",
     icon: "📝",
@@ -627,22 +642,6 @@ const POCS = [
     links: [
       { label: "Live app", url: "https://ai-recipe-generator-2026.netlify.app/" },
       { label: "Architecture", url: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Recipe-Architecture%20diagram.png" }
-    ]
-  },
-
-  {
-    title: "AI Delivery Status Agent",
-    desc: "AI agent built on Claude Managed Agents — Anthropic's hosted agent runtime (public beta, April 2026). Autonomously fetches Jira tickets, GitHub PRs, CI status, and a RAID log, then synthesises a structured delivery health report. Orchestration, retries, state management, and context compaction are handled by the platform — the build focuses on tool definitions and execution handlers.",
-    icon: "📊",
-    iconBg: "#eef2fd",
-    status: "live",
-    arch: "Netlify → Railway (tool handlers) → Claude Managed Agents (Anthropic) → Jira / GitHub APIs",
-    tags: ["AI", "Agentic", "Python", "Full-stack"],
-    tagStyle: { bg: "#eef2fd", color: "#1a4fd6" },
-    architectureImg: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Agent-Architecture.png",
-    links: [
-      { label: "Live app", url: "https://ai-agent-project-status.netlify.app/" },
-      { label: "Architecture", url: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-Agent-Architecture.png" }
     ]
   },
 
