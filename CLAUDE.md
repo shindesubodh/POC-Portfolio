@@ -37,7 +37,7 @@ Everything lives in `index.html`:
 2. **AI Interview Scorecard** — Flask + Netlify (frontend) + Railway (backend) + PostgreSQL + Claude API
 3. **Windows Keep-Alive Utility** — Windows utility POC
 4. **AI Delivery Status Agent** — Claude Managed Agents (Anthropic hosted runtime); tool handlers on Railway; Jira / GitHub / CI / RAID log; Netlify frontend
-5. **AI Sprint Planner** — Claude plans a sprint from a live Jira backlog via Atlassian Rovo MCP server; human approval before writing to Jira; Flask (Railway) + React (Netlify). Source: github.com/shindesubodh/Jira-MCP-POC
+5. **AI Sprint Planner** — Claude plans a sprint from a live Jira backlog via Atlassian Rovo MCP server; human approval before writing to Jira; Flask + Gunicorn (Railway) + React (Netlify). Source: github.com/shindesubodh/Jira-MCP-POC
 
 ## Common Tasks
 - Edit portfolio pages in VS Code, commit and push to trigger GitHub Pages deploy
