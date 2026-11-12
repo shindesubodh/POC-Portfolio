@@ -255,6 +255,7 @@
     .poc-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      grid-auto-rows: 1fr;
       gap: 14px;
     }
     .poc-card {
@@ -283,15 +284,6 @@
     .status-live   { background: #e8f5ec; color: #2a7a3b; }
     .status-demo   { background: var(--accent-bg); color: var(--accent); }
     .status-wip    { background: #fef4e4; color: #a05c10; }
-
-    .poc-card.poc-highlight { border-color: #0052cc; box-shadow: 0 0 0 1px #0052cc inset; }
-    .poc-card.poc-highlight:hover { border-color: #0052cc; box-shadow: 0 0 0 1px #0052cc inset, 0 4px 20px rgba(0,82,204,0.12); }
-    .poc-badge {
-      align-self: flex-start;
-      font-size: 11px; font-weight: 600;
-      padding: 3px 10px; border-radius: 20px;
-      background: #0052cc; color: #fff;
-    }
 
     .poc-title { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.3; }
     .poc-desc  { font-size: 13px; color: var(--ink-mid); line-height: 1.6; font-weight: 300; }
@@ -605,14 +597,13 @@ const POCS = [
   },
   {
     title: "AI Sprint Planner",
-    desc: "Claude reads a live Jira backlog through Atlassian's Rovo MCP server, plans a sprint that fits the team's capacity and sprint goal, and writes the sprint to Jira only after a human approves it. Read-only Jira tools while planning; write tools unlocked only on Confirm.",
+    desc: "Claude plans a sprint from the live Jira backlog to fit the team's capacity. The app's own MCP client and agent loop read Jira via Atlassian's Rovo MCP server; nothing is written to Jira until a human approves the plan.",
     icon: "🗂️",
-    iconBg: "#e6efff",
+    iconBg: "#eef2fd",
     status: "live",
-    highlight: "Jira Rovo MCP Server",
-    arch: "Netlify → Flask + Gunicorn (Railway) → Claude API + Atlassian Rovo MCP → Jira Cloud",
-    tags: ["AI", "MCP", "Agentic", "Python", "Full-stack"],
-    tagStyle: { bg: "#e6efff", color: "#0052cc" },
+    arch: "Netlify → Flask (Railway) → Claude API + Rovo MCP → Jira",
+    tags: ["AI", "Jira Rovo MCP Server", "Agentic"],
+    tagStyle: { bg: "#eef2fd", color: "#1a4fd6" },
     architectureImg: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/Sprint-Planning-Jira-MCP%20Architecture.png",
     links: [
       { label: "Live app", url: "https://jira-mcp-sprint-planning.netlify.app/" },
@@ -698,12 +689,11 @@ function renderPOCs(filter) {
       return `<a class="poc-link" href="${l.url}" target="_blank" rel="noopener">${extSvg} ${l.label}</a>`;
     }).join('');
     return `
-      <div class="poc-card${p.highlight ? ' poc-highlight' : ''}" style="animation-delay:${i * 0.07}s">
+      <div class="poc-card" style="animation-delay:${i * 0.07}s">
         <div class="poc-card-top">
           <div class="poc-icon" style="background:${p.iconBg}">${p.icon}</div>
           <span class="status ${statusClass}">${statusLabel}</span>
         </div>
-        ${p.highlight ? `<span class="poc-badge">${p.highlight}</span>` : ''}
         <div class="poc-title">${p.title}</div>
         <div class="poc-desc">${p.desc}</div>
         <div class="poc-arch">${p.arch}</div>
