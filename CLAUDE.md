@@ -29,7 +29,7 @@ Everything lives in `index.html`:
 
 - **Bio / meta cards**: edit the `#about` section HTML directly.
 - **Skills**: edit the `SKILLS` array in the `<script>` block.
-- **POC cards**: edit the `POCS` array. A commented-out template at the end of the array shows all available fields. POC `status` accepts `"live"`, `"demo"`, or `"wip"`.
+- **POC cards**: edit the `POCS` array. A commented-out template at the end of the array shows all available fields. POC `status` accepts `"live"`, `"demo"`, or `"wip"`. Optional `highlight: "text"` adds a blue badge and blue border to the card (used for the Jira Rovo MCP card).
 - **Contact links**: edit the `#contact` section HTML directly.
 
 ## POCs Showcased
@@ -37,6 +37,7 @@ Everything lives in `index.html`:
 2. **AI Interview Scorecard** — Flask + Netlify (frontend) + Railway (backend) + PostgreSQL + Claude API
 3. **Windows Keep-Alive Utility** — Windows utility POC
 4. **AI Delivery Status Agent** — Claude Managed Agents (Anthropic hosted runtime); tool handlers on Railway; Jira / GitHub / CI / RAID log; Netlify frontend
+5. **AI Sprint Planner** — Claude plans a sprint from a live Jira backlog via Atlassian Rovo MCP server; human approval before writing to Jira; Flask (Railway) + React (Netlify). Source: github.com/shindesubodh/Jira-MCP-POC
 
 ## Common Tasks
 - Edit portfolio pages in VS Code, commit and push to trigger GitHub Pages deploy
