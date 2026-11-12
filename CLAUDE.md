@@ -35,11 +35,8 @@ Everything lives in `index.html`:
 ## POCs Showcased
 1. **AI Proposal Generator** — RAG-grounded proposal generator; Flask + React + Claude API + Voyage AI + pgvector; Railway + Netlify
 2. **AI Interview Scorecard** — Flask + Netlify (frontend) + Railway (backend) + PostgreSQL + Claude API
-3. **AI Recipe Generator** — Flask + Netlify (frontend) + Railway (backend) + PostgreSQL + Claude API
-4. **Smart Meeting Assistant** — MCP + Gmail + Google Calendar + React + Railway
-5. **Windows Keep-Alive Utility** — Windows utility POC
-6. **AI Test Automation Agent** — Two-stage pipeline: screenshots → manual test cases → Playwright TypeScript
-7. **AI Delivery Status Agent** — Claude Managed Agents (Anthropic hosted runtime); tool handlers on Railway; Jira / GitHub / CI / RAID log; Netlify frontend
+3. **Windows Keep-Alive Utility** — Windows utility POC
+4. **AI Delivery Status Agent** — Claude Managed Agents (Anthropic hosted runtime); tool handlers on Railway; Jira / GitHub / CI / RAID log; Netlify frontend
 
 ## Common Tasks
 - Edit portfolio pages in VS Code, commit and push to trigger GitHub Pages deploy
