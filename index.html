@@ -551,6 +551,22 @@ const SKILLS = [
 
 const POCS = [
   {
+    title: "AI E2E SDLC Orchestrator",
+    desc: "Claude agents take a project idea through all 9 SDLC phases, from Charter and Jira backlog to design, code, tests, deploy and retrospective. A Reviewer agent checks every artefact against the Quality Gate; a human approves every gate.",
+    icon: "🚉",
+    iconBg: "#eef2fd",
+    status: "live",
+    arch: "Netlify → Flask (Railway) → Claude API + Managed Agents → Jira (Rovo MCP) / GitHub",
+    tags: ["AI", "Agentic", "Jira Rovo MCP Server"],
+    tagStyle: { bg: "#eef2fd", color: "#1a4fd6" },
+    architectureImg: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-E2E-SDLC-Orchestrator-Architecture.png",
+    links: [
+      { label: "Live app", url: "https://ai-e2e-sdlc-orchestrator.netlify.app" },
+      { label: "App it built", url: "https://sdlc-demo-apps.github.io/sdlc-pomodoro-timer-r6/" },
+      { label: "Architecture", url: "https://raw.githubusercontent.com/shindesubodh/POC-Portfolio/main/diagrams/AI-E2E-SDLC-Orchestrator-Architecture.png" }
+    ]
+  },
+  {
     title: "AI Delivery Status Agent",
     desc: "Delivery health agent built on Claude Managed Agents — Anthropic's hosted agent runtime. Autonomously fetches Jira tickets, GitHub PRs, CI status, and a RAID log, then synthesises a structured delivery status report.",
     icon: "📊",

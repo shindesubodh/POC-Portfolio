@@ -37,6 +37,7 @@ Everything lives in `index.html`:
 3. **Windows Keep-Alive Utility** — Windows utility POC
 4. **AI Delivery Status Agent** — Claude Managed Agents (Anthropic hosted runtime); tool handlers on Railway; Jira / GitHub / CI / RAID log; Netlify frontend
 5. **AI Sprint Planner** — Claude plans a sprint from a live Jira backlog via Atlassian Rovo MCP server; human approval before writing to Jira; Flask (Railway) + React (Netlify). Source: github.com/shindesubodh/Jira-MCP-POC
+6. **AI E2E SDLC Orchestrator** (first card) — Claude agents run a project through SDLC Phases 0–8 (Charter → Jira backlog → design → code → tests → GitHub Pages deploy → retro); Reviewer agent + human gate approvals; Flask (Railway) + React (Netlify) + Claude API + Managed Agents + Rovo MCP. Repo is private: no code link. Diagram taken from its Solution Design.
 
 ## Common Tasks
 - Edit portfolio pages in VS Code, commit and push to trigger GitHub Pages deploy
